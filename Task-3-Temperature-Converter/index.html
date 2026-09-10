@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Professional Temperature Converter using HTML, CSS and JavaScript"
+    >
+
+    <title>Tempora | Temperature Converter</title>
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background">
+
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <div class="container navbar">
+
+            <a
+                href="#"
+                class="logo"
+            >
+                <span class="logo-icon">
+                    <i class="fa-solid fa-temperature-half"></i>
+                </span>
+
+                Tempora
+            </a>
+
+
+            <nav class="nav">
+
+                <a
+                    href="#converter"
+                    class="nav-link active"
+                >
+                    Converter
+                </a>
+
+                <a
+                    href="#about"
+                    class="nav-link"
+                >
+                    About
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO SECTION
+        ================================================== -->
+
+        <section
+            class="hero"
+            id="converter"
+        >
+
+            <div class="container hero-grid">
+
+
+                <!-- LEFT CONTENT -->
+
+                <div class="hero-content reveal">
+
+                    <div class="badge">
+
+                        <span class="live-dot"></span>
+
+                        SIMPLE • FAST • ACCURATE
+
+                    </div>
+
+
+                    <p class="eyebrow">
+                        SMART TEMPERATURE CONVERSION
+                    </p>
+
+
+                    <h1>
+
+                        Convert
+                        <span>Temperatures</span>
+                        Instantly.
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        A clean and professional temperature
+                        conversion tool designed to convert
+                        Celsius, Fahrenheit and Kelvin with
+                        speed and accuracy.
+
+                    </p>
+
+
+                    <div class="hero-features">
+
+                        <div class="feature">
+
+                            <i class="fa-solid fa-bolt"></i>
+
+                            <span>
+                                Instant Results
+                            </span>
+
+                        </div>
+
+
+                        <div class="feature">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <span>
+                                Accurate
+                            </span>
+
+                        </div>
+
+
+                        <div class="feature">
+
+                            <i class="fa-solid fa-mobile-screen"></i>
+
+                            <span>
+                                Responsive
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONVERTER CARD -->
+
+                <div class="converter-wrapper reveal">
+
+                    <div class="converter-card">
+
+
+                        <!-- CARD HEADER -->
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <p class="card-label">
+                                    TEMPERATURE
+                                </p>
+
+                                <h2>
+                                    Converter
+                                </h2>
+
+                            </div>
+
+
+                            <div class="temperature-icon">
+
+                                <i class="fa-solid fa-temperature-high"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- INPUT -->
+
+                        <div class="input-group">
+
+                            <label for="temperature">
+
+                                Enter Temperature
+
+                            </label>
+
+
+                            <div class="input-wrapper">
+
+                                <input
+                                    type="number"
+                                    id="temperature"
+                                    placeholder="0"
+                                    autocomplete="off"
+                                >
+
+
+                                <span class="input-symbol">
+                                    °
+                                </span>
+
+                            </div>
+
+
+                            <small
+                                id="inputError"
+                                class="error-message"
+                            >
+                                Please enter a valid temperature.
+                            </small>
+
+                        </div>
+
+
+                        <!-- UNIT SELECTION -->
+
+                        <div class="conversion-row">
+
+
+                            <!-- FROM -->
+
+                            <div class="unit-group">
+
+                                <label for="fromUnit">
+                                    From
+                                </label>
+
+
+                                <div class="select-wrapper">
+
+                                    <select id="fromUnit">
+
+                                        <option value="celsius">
+                                            Celsius °C
+                                        </option>
+
+                                        <option value="fahrenheit">
+                                            Fahrenheit °F
+                                        </option>
+
+                                        <option value="kelvin">
+                                            Kelvin K
+                                        </option>
+
+                                    </select>
+
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- SWAP BUTTON -->
+
+                            <button
+                                type="button"
+                                class="swap-button"
+                                id="swapButton"
+                                aria-label="Swap temperature units"
+                            >
+
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+                            </button>
+
+
+                            <!-- TO -->
+
+                            <div class="unit-group">
+
+                                <label for="toUnit">
+                                    To
+                                </label>
+
+
+                                <div class="select-wrapper">
+
+                                    <select id="toUnit">
+
+                                        <option value="fahrenheit">
+                                            Fahrenheit °F
+                                        </option>
+
+                                        <option value="celsius">
+                                            Celsius °C
+                                        </option>
+
+                                        <option value="kelvin">
+                                            Kelvin K
+                                        </option>
+
+                                    </select>
+
+
+                                    <i class="fa-solid fa-chevron-down"></i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONVERT BUTTON -->
+
+                        <button
+                            type="button"
+                            class="convert-button"
+                            id="convertButton"
+                        >
+
+                            <span>
+                                Convert Temperature
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                        <!-- RESULT -->
+
+                        <div
+                            class="result-box"
+                            id="resultBox"
+                        >
+
+                            <div class="result-top">
+
+                                <span>
+                                    RESULT
+                                </span>
+
+
+                                <button
+                                    type="button"
+                                    id="copyButton"
+                                    class="copy-button"
+                                    aria-label="Copy result"
+                                >
+
+                                    <i class="fa-regular fa-copy"></i>
+
+                                    <span>
+                                        Copy
+                                    </span>
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="result-value">
+
+                                <span id="resultValue">
+                                    —
+                                </span>
+
+                                <small id="resultUnit">
+                                    °F
+                                </small>
+
+                            </div>
+
+
+                            <p id="resultDescription">
+
+                                Enter a temperature to begin.
+
+                            </p>
+
+                        </div>
+
+
+                        <!-- CLEAR -->
+
+                        <button
+                            type="button"
+                            class="clear-button"
+                            id="clearButton"
+                        >
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Clear
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUICK CONVERSIONS
+        ================================================== -->
+
+        <section class="quick-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <p>
+                        QUICK REFERENCE
+                    </p>
+
+                    <h2>
+                        Common Conversions
+                    </h2>
+
+                    <span>
+                        Useful temperature values at a glance.
+                    </span>
+
+                </div>
+
+
+                <div class="quick-grid">
+
+
+                    <div class="quick-card reveal">
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                FREEZING POINT
+                            </span>
+
+                            <h3>
+                                0°C = 32°F
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-card reveal">
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                WATER BOILING
+                            </span>
+
+                            <h3>
+                                100°C = 212°F
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-card reveal">
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-temperature-low"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                ABSOLUTE ZERO
+                            </span>
+
+                            <h3>
+                                −273.15°C = 0K
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-card reveal">
+
+                        <div class="quick-icon">
+                            <i class="fa-solid fa-sun"></i>
+                        </div>
+
+                        <div>
+
+                            <span>
+                                ROOM TEMPERATURE
+                            </span>
+
+                            <h3>
+                                25°C = 77°F
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABOUT SECTION
+        ================================================== -->
+
+        <section
+            class="about-section"
+            id="about"
+        >
+
+            <div class="container">
+
+
+                <div class="section-heading centered reveal">
+
+                    <p>
+                        HOW IT WORKS
+                    </p>
+
+                    <h2>
+                        Simple. Fast. Reliable.
+                    </h2>
+
+                    <span>
+                        Convert temperatures in just three steps.
+                    </span>
+
+                </div>
+
+
+                <div class="steps">
+
+
+                    <div class="step-card reveal">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <div class="step-icon">
+
+                            <i class="fa-solid fa-keyboard"></i>
+
+                        </div>
+
+                        <h3>
+                            Enter Value
+                        </h3>
+
+                        <p>
+                            Enter the temperature value
+                            you want to convert.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step-line"></div>
+
+
+                    <div class="step-card reveal">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div class="step-icon">
+
+                            <i class="fa-solid fa-list"></i>
+
+                        </div>
+
+                        <h3>
+                            Select Units
+                        </h3>
+
+                        <p>
+                            Choose the original and
+                            target temperature units.
+                        </p>
+
+                    </div>
+
+
+                    <div class="step-line"></div>
+
+
+                    <div class="step-card reveal">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div class="step-icon">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </div>
+
+                        <h3>
+                            Get Result
+                        </h3>
+
+                        <p>
+                            Click convert and receive
+                            your result instantly.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FORMULA SECTION
+        ================================================== -->
+
+        <section class="formula-section">
+
+            <div class="container">
+
+                <div class="formula-card reveal">
+
+
+                    <div class="formula-content">
+
+                        <p class="eyebrow">
+                            CONVERSION FORMULAS
+                        </p>
+
+                        <h2>
+                            Understand the
+                            <span>Math Behind It.</span>
+                        </h2>
+
+                        <p>
+                            Temperature conversion uses
+                            simple mathematical formulas
+                            to move accurately between
+                            Celsius, Fahrenheit and Kelvin.
+                        </p>
+
+                    </div>
+
+
+                    <div class="formula-list">
+
+
+                        <div class="formula">
+
+                            <span>
+                                Celsius → Fahrenheit
+                            </span>
+
+                            <strong>
+                                (°C × 9/5) + 32
+                            </strong>
+
+                        </div>
+
+
+                        <div class="formula">
+
+                            <span>
+                                Fahrenheit → Celsius
+                            </span>
+
+                            <strong>
+                                (°F − 32) × 5/9
+                            </strong>
+
+                        </div>
+
+
+                        <div class="formula">
+
+                            <span>
+                                Celsius → Kelvin
+                            </span>
+
+                            <strong>
+                                °C + 273.15
+                            </strong>
+
+                        </div>
+
+
+                        <div class="formula">
+
+                            <span>
+                                Kelvin → Celsius
+                            </span>
+
+                            <strong>
+                                K − 273.15
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="#"
+                    class="logo"
+                >
+
+                    <span class="logo-icon">
+
+                        <i class="fa-solid fa-temperature-half"></i>
+
+                    </span>
+
+                    Tempora
+
+                </a>
+
+
+                <p>
+                    A professional temperature
+                    conversion experience.
+                </p>
+
+            </div>
+
+
+            <div class="footer-info">
+
+                <span>
+                    BUILT WITH
+                </span>
+
+                <strong>
+                    HTML • CSS • JavaScript
+                </strong>
+
+            </div>
+
+
+            <div class="footer-copy">
+
+                <p>
+                    © <span id="year"></span>
+                    Tempora. All rights reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         TOAST MESSAGE
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+            Result copied!
+        </span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
